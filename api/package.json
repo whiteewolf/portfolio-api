@@ -1,10 +1,10 @@
 {
   "name": "ilieff-portfolio-api",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "express-session": "^1.18.0",
     "firebase-admin": "^12.1.1",
     "fs": "^0.0.1-security",
-    "nodemon": "^3.1.2"
+    "nodemon": "^3.1.2",
+    "path": "^0.12.7"
   }
 }
