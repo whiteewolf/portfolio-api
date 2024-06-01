@@ -6,7 +6,7 @@ const router = express.Router();
 // const db = admin.firestore();
 // const messagesCollection = db.collection('messages');
 
-router.post('/', async (req, res) => {
+router.post('/api', async (req, res) => {
     try {
         const newMessage = req.body;
         // await messagesCollection.add(newMessage);
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', authMiddleware, async (req, res) => {
+router.get('/api', authMiddleware, async (req, res) => {
     try {
         // const snapshot = await messagesCollection.get();
         // const messages = snapshot.docs.map(doc => doc.data());

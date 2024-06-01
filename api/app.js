@@ -27,11 +27,11 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/messages', messageRoutes);
-app.use('/auth', authRoutes);
+app.use('/api/messages', messageRoutes);
+app.use('/api/auth', authRoutes);
 
-app.get('/', async (req, res) => {
-    res.redirect('/auth/login')
+app.get('/api', async (req, res) => {
+    res.redirect('/api/auth/login')
 })
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
