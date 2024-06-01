@@ -4,6 +4,6 @@ module.exports = (req, res, next) => {
     if(req.session.isAuthenticated) {
         next();
    } else {
-    res.redirect("api/auth/login")
+    res.redirect("/auth/login")
    }
 };
