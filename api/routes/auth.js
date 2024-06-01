@@ -10,7 +10,7 @@ router.post('/login', (req, res) => {
     console.log(pin, secretPin)
     if (pin === secretPin) {
         req.session.isAuthenticated = true;
-        res.redirect('/messages/view');
+        res.redirect('/api/messages/view');
     } else {
         res.status(401).json({ error: 'Unauthorized' });
     }

@@ -9,7 +9,7 @@
     <h1>Messages</h1>
     <div id="messages"></div>
     <script>
-        fetch('/messages')
+        fetch('/api/messages')
             .then(response => response.json())
             .then(data => {
                 const messagesDiv = document.getElementById('messages');
