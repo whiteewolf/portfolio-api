@@ -6,7 +6,7 @@ const router = express.Router();
 // const db = admin.firestore();
 // const messagesCollection = db.collection('messages');
 
-router.post('/api', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newMessage = req.body;
         // await messagesCollection.add(newMessage);
