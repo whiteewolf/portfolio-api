@@ -17,7 +17,7 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.sendFile('login.html', { root: path.join(__dirname, '../public') });
+    res.sendFile('login.html', { root: path.join(__dirname, '../../public') });
 });
 
 module.exports = router;

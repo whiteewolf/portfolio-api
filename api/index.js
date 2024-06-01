@@ -5,7 +5,7 @@ const path = require('path');
 const messageRoutes = require('./routes/messages');
 const authRoutes = require('./routes/auth');
 // const admin = require('firebase-admin');
-require('dotenv').config();
+require('dotenv').config(path.join(__dirname, '../.env'));
 
 const app = express();
 const PORT = 3000;
@@ -25,7 +25,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/messages', messageRoutes);
 app.use('/auth', authRoutes);
