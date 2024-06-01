@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/api', authMiddleware, async (req, res) => {
+router.get('/', authMiddleware, async (req, res) => {
     try {
         // const snapshot = await messagesCollection.get();
         // const messages = snapshot.docs.map(doc => doc.data());
