@@ -27,7 +27,7 @@ router.get('/', authMiddleware, async (req, res) => {
 });
 
 router.get('/view', authMiddleware, (req, res) => {
-    res.sendFile('messages.html', { root: 'public' });
+    res.sendFile('messages.html', { root: path.join(__dirname, '../../public') });
 });
 
 module.exports = router;
