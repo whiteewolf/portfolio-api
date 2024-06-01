@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+require("dotenv").config();
 
-const secretPin = process.env.SECRET_PIN || '1234'; // Change this to your secret PIN
+const secretPin = '2912'; // Change this to your secret PIN
 
 router.post('/login', (req, res) => {
-    const { pin } = req.body;
+    const pin = req.body.pin;
+    console.log(pin, secretPin)
     if (pin === secretPin) {
         req.session.isAuthenticated = true;
         res.redirect('/messages/view');
