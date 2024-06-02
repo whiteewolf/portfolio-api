@@ -17,8 +17,7 @@ const PORT = 3000;
 //     databaseURL: "https://<your-database-name>.firebaseio.com" // Replace <your-database-name>
 // });
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     secret: 'your_session_secret', // Change this to a secure secret
     resave: false,
