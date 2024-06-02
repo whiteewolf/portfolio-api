@@ -4,6 +4,7 @@ const session = require('express-session');
 const path = require('path');
 const messageRoutes = require('./routes/messages');
 const authRoutes = require('./routes/auth');
+const { MongoClient } = require('mongodb');
 // const admin = require('firebase-admin');
 require('dotenv').config(path.join(__dirname, '../.env'));
 
