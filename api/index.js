@@ -7,6 +7,7 @@ const authRoutes = require('./routes/auth');
 const { MongoClient } = require('mongodb');
 // const admin = require('firebase-admin');
 require('dotenv').config(path.join(__dirname, '../.env'));
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
@@ -35,6 +36,11 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
+
+const corsOptions = {
+    origin: 'http://localhost:5173', // Specify the origin you want to allow
+    optionsSuccessStatus: 200,
+};
 
 app.use(express.static(path.join(__dirname, '../public')));
 
