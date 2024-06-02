@@ -41,7 +41,7 @@ const corsOptions = {
     origin: 'http://localhost:5173', // Specify the origin you want to allow
     optionsSuccessStatus: 200,
 };
-
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api/messages', (req, res, next) => {
