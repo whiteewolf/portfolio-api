@@ -38,7 +38,7 @@ app.use(session({
 }));
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Specify the origin you want to allow
+    origin: 'https://portfolio-svelte2.pages.dev/', // Specify the origin you want to allow
     optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
