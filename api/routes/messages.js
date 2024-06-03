@@ -1,30 +1,27 @@
 const express = require('express');
-// const admin = require('firebase-admin');
+const Message = require('../models/message');
 const authMiddleware = require('../middleware/auth');
-const path = require("path")
-
+const path = require('path');
 const router = express.Router();
-// const db = admin.firestore();
-// const messagesCollection = db.collection('messages');
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     try {
-        const newMessage = req.body;
-        const messagesCollection = req.db.collection('messages');
-        await messagesCollection.insertOne(newMessage);
+        const newMessage = new Message(req.body);
+        await newMessage.save();
         res.status(201).json({ message: 'Message received' });
     } catch (error) {
-        res.status(500).json({ error: 'Error saving message' });
+        console.error('Error saving message:', error);
+        next(error); // Pass the error to the error handling middleware
     }
 });
 
-router.get('/', authMiddleware, async (req, res) => {
+router.get('/', authMiddleware, async (req, res, next) => {
     try {
-        const messagesCollection = req.db.collection('messages');
-        const messages = await messagesCollection.find({}).toArray();
+        const messages = await Message.find({});
         res.status(200).json(messages);
     } catch (error) {
-        res.status(500).json({ error: 'Error retrieving messages' });
+        console.error('Error retrieving messages:', error);
+        next(error); // Pass the error to the error handling middleware
     }
 });
 
