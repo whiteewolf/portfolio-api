@@ -43,10 +43,7 @@ const corsOptions = {
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/api/messages', (req, res, next) => {
-    req.db = db;
-    next();
-}, messageRoutes);
+app.use('/api/messages', messageRoutes);
 app.use('/api/auth', authRoutes);
 
 app.get('/', async (req, res) => {
